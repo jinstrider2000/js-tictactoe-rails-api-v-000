@@ -24,11 +24,11 @@ function saveGame() {
   if (currentGameId === null) {
     $.post("/games", {"state": getBoardState()}).done((savedGame) => {
       memo[savedGame.data.id] = savedGame.data.attributes.state;
-    }).done(() => previousGames());
+    });
   } else {
     $.ajax(`/games/${currentGameId}`, {method: "PATCH", data: {"state": getBoardState()}}).done((savedGame) => {
       memo[savedGame.data.id] = savedGame.data.attributes.state;
-    }).done(() => previousGames());
+    });
   }
   clearBoard();
 }
