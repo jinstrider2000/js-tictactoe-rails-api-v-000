@@ -57,7 +57,6 @@ function loadPreviousGame(gameId) {
 function clearBoard() {
   spaces.html("");
   window.turn = 0;
-  currentGameId = null;
 }
 
 function loadBoardState(state) {
