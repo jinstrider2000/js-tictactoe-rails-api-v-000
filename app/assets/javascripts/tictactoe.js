@@ -30,7 +30,6 @@ function saveGame() {
       memo[savedGame.data.id] = savedGame.data.attributes.state;
     });
   }
-  clearBoard();
 }
 
 function previousGames() {
