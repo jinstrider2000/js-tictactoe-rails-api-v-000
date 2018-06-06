@@ -39,7 +39,7 @@ function previousGames() {
   $.get("/games").done((gamesList) => {
     for (const game of gamesList.data) {
       const gameButton = $("<button></button>").html(`Game ${game.id}`).attr("data-id", game.id).on("click", function () {
-        console.log(this.data("id"));
+        console.log(this.dataset);
         // loadPreviousGame(this.data("id"));
       });
       gamesDiv.append(gameButton);
