@@ -48,7 +48,9 @@ function previousGames() {
 
 function loadPreviousGame(gameId) {
   $.get(`games/${gameId}`).done((game) => {
+    clearBoard();
     loadBoardState(game.data.attributes.state);
+    currentGameId = gameId;
   });
 }
 
@@ -60,8 +62,12 @@ function clearBoard() {
 
 function loadBoardState(state) {
   let counter = 0;
+  window.turn = 0;
   for (const space of spaces) {
     space.innerHTML = state[counter];
+    if (state[counter] !== "") {
+      window.turn++;
+    }
     counter++;
   }
 }
