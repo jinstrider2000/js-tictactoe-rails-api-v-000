@@ -17,7 +17,10 @@ function attachListeners() {
   });
   $("#save").on("click",saveGame);
   $("#previous").on("click", previousGames);
-  $("#clear").on("click", clearBoard);
+  $("#clear").on("click", function () {
+    clearBoard();
+    currentGameId = null;
+  });
 }
 
 function saveGame() {
