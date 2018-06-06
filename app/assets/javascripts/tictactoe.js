@@ -50,7 +50,7 @@ function loadPreviousGame(gameId) {
   $.get(`games/${gameId}`).done((game) => {
     clearBoard();
     loadBoardState(game.data.attributes.state);
-    currentGameId = gameId;
+    currentGameId = game.data.id;
   });
 }
 
